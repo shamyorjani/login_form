@@ -18,7 +18,7 @@ if (isset($_GET['email']) && isset($_GET['token'])) {
     $token = $_GET['token'];
 
     // Update user record to mark as verified
-    $sql = "UPDATE `users` SET `verified` = '1' WHERE `email` = '$email' AND `verified` = '$token'";
+    $sql = "UPDATE `users` SET `verified` = 'yes' WHERE `email` = '$email' AND `token` = '$token'";
 
     if ($conn->query($sql) === TRUE) {
         echo "Email verification successful. You can now <a href='login.html'>login</a>.";
